@@ -1,4 +1,10 @@
 - Created React app
 - Configured Tailwindcss
+- Routing of App
 - Header
 - Login Form
+- SignUp Form
+- Form Validation
+- Firbase
+- useRef
+- authentication
