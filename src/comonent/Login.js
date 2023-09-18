@@ -1,14 +1,22 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { validatesigninForm, validatesignupForm } from "../utils/validate";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { addUser } from "../utils/userSlice";
+import { useDispatch } from "react-redux";
+import { LOGIN_BACKGROUND, USER_AVTAR } from "../utils/constant";
 const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const dispatch =useDispatch()
   const signUpHandler = (event) => {
     event.preventDefault();
     setIsSignIn((prev) => !prev);
@@ -41,17 +49,40 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL: USER_AVTAR
+          })
+            .then(() => {
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
+            })
+            .catch((error) => {
+              setErrorMessage(error)
+            });
+          
           // ...
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setErrorMessage(errorCode+"-"+errorMessage)
+          setErrorMessage(errorCode + "-" + errorMessage);
+          
           // ..
         });
     } else {
-      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
@@ -61,21 +92,21 @@ const Login = () => {
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
-          setErrorMessage(errorCode+"-"+errorMessage)
+          setErrorMessage(errorCode + "-" + errorMessage);
         });
     }
   };
   return (
     <div className=" bg-black">
-      <Header />
+      <Header/>
       <div className="absolute">
         <img
           className="opacity-100"
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/dc1cf82d-97c9-409f-b7c8-6ac1718946d6/14a8fe85-b6f4-4c06-8eaf-eccf3276d557/IN-en-20230911-popsignuptwoweeks-perspective_alpha_website_large.jpg"
+          src={LOGIN_BACKGROUND}
           alt="background"
         />
       </div>
-      <form className="absolute text-white h-90 rounded-md bg-black bg-opacity-80 w-2/6 mt-20 mx-auto right-0 left-0 flex flex-col  px-12 py-20">
+      <form className="absolute text-white h-fit w-[400px] rounded-md bg-black bg-opacity-80  mt-20 mx-auto right-0 left-0 flex flex-col  px-12 py-20">
         <h1 className="text-3xl font-bold mb-5">
           {isSignIn ? "Sign In" : "Sign Up"}
         </h1>

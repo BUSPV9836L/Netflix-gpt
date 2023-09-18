@@ -8,3 +8,9 @@
 - Firbase
 - useRef
 - authentication
+- setup Redux Store
+- bug fix sign up feature
+- display name and profile picture update
+- redirect user to correct path
+- unsubscribe to onauthchange callback
+- added hardcoded value to the constant file
