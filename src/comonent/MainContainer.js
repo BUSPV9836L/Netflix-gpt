@@ -10,10 +10,9 @@ const MainContainer = () => {
   const { overview, title,id } = nowPlayingMovie;
 
   return (
-    <div className=" overflow-x-hidden">
+    <div className=" w-screen">
       <VideoTitle overview={overview} title={title} />
       <VideoBackground id={id}/>
-      
     </div>
   );
 };
