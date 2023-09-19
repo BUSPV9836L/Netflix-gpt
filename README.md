@@ -14,3 +14,10 @@
 - redirect user to correct path
 - unsubscribe to onauthchange callback
 - added hardcoded value to the constant file
+- Registered TMBD api
+- get data from TMBD api now playing
+- Custom hooks for now playing Videos
+- Created MovieSlice
+- Updated store with movie data
+- Fetched data for trailer video
+- Embeded the youtube video and make it autoplay and mute

@@ -6,7 +6,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { LOGO, USER_AVTAR } from "../utils/constant";
+import { LOGO } from "../utils/constant";
 const Header = () => {
   const dispatch = useDispatch();
   const nagivate = useNavigate()

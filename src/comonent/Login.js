@@ -86,7 +86,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
+
           // ...
         })
         .catch((error) => {
@@ -97,16 +97,16 @@ const Login = () => {
     }
   };
   return (
-    <div className=" bg-black">
+    <div className="bg-black">
       <Header/>
-      <div className="absolute">
+      <div>
         <img
           className="opacity-100"
           src={LOGIN_BACKGROUND}
           alt="background"
         />
       </div>
-      <form className="absolute text-white h-fit w-[400px] rounded-md bg-black bg-opacity-80  mt-20 mx-auto right-0 left-0 flex flex-col  px-12 py-20">
+      <form className=" absolute mt-[-600px] text-white h-fit w-[400px] rounded-md bg-black bg-opacity-80 mx-auto right-0 left-0 flex flex-col  px-12 py-20">
         <h1 className="text-3xl font-bold mb-5">
           {isSignIn ? "Sign In" : "Sign Up"}
         </h1>
