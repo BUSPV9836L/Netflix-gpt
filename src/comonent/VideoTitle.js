@@ -1,4 +1,5 @@
 import React from "react";
+import { AiFillInfoCircle } from "react-icons/ai";
 
 const VideoTitle = (props) => {
   return (
@@ -15,11 +16,7 @@ const VideoTitle = (props) => {
           Play Now
         </button>
         <button className=" bg-gray-700 px-2 py-1 ml-4 rounded-sm text-white font-medium flex items-center hover:opacity-80 ">
-        <img
-            className="h-4 w-4 mr-1"
-            src="https://cdn.iconscout.com/icon/premium/png-512-thumb/info-1538308-1303911.png?f=avif&w=512"
-            alt="play"
-          />
+        <AiFillInfoCircle className="mr-1"/>
           More Info
         </button>
       </div>

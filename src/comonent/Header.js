@@ -7,15 +7,17 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { LOGO } from "../utils/constant";
+import { toggleGptSearch } from "../utils/gptSlice";
 const Header = () => {
   const dispatch = useDispatch();
-  const nagivate = useNavigate()
-  const handelSignOut =()=>{
-    signOut(auth).then(() => {
-    }).catch((error) => {
-      nagivate("/error")
-    });
-  }
+  const nagivate = useNavigate();
+  const handelSignOut = () => {
+    signOut(auth)
+      .then(() => {})
+      .catch((error) => {
+        nagivate("/error");
+      });
+  };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -36,24 +38,35 @@ const Header = () => {
       }
     });
     // this will we called when componet get unmount
-    return () => unsubscribe()
+    return () => unsubscribe();
   }, []);
+  const handelGptSearch = () =>{
+    dispatch(toggleGptSearch())
+  }
   return (
     <div className="w-full absolute px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between">
-      <img
-        className="w-44"
-        src={LOGO}
-        alt="logo"
-      />
-      {auth.currentUser?
-      <div className="flex items-center">
-      <img
-        className="w-10 h-10 rounded-md"
-        src={auth.currentUser.photoURL}
-        alt="user"
-      />
-      <button className="text-red-700 font-bold text-lg ml-2" onClick={handelSignOut}>Log Out</button>
-    </div>:""}
+      <img className="w-44" src={LOGO} alt="logo" />
+      {auth.currentUser ? (
+        <div className="flex items-center">
+          <button className="text-white font-bold text-lg px-4 py-2 rounded-md mr-4 bg-gradient-to-b from-lime-900 hover:bg-lime-900"
+          onClick={handelGptSearch}>
+            GPT Search
+          </button>
+          <button
+            className="text-white font-bold text-lg px-4 py-2 rounded-md mr-4 bg-gradient-to-b from-lime-900 hover:bg-lime-900"
+            onClick={handelSignOut}
+          >
+            Log Out
+          </button>
+          <img
+            className="w-10 h-10 rounded-md"
+            src={auth.currentUser.photoURL}
+            alt="user"
+          />
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

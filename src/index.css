@@ -4,3 +4,12 @@
   ::-webkit-scrollbar {
     width: 0; /* This will hide the scrollbar on the Y-axis (vertical) */
   }
+  .overflow-x-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* For iOS devices */
+  }
+  * {
+    user-select: none;
+    -webkit-user-select: none; /* For older versions of Safari */
+    -moz-user-select: none; /* For older versions of Firefox */
+  }

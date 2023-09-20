@@ -1,6 +1,4 @@
-import React from "react";
-import {FaRegHeart} from "react-icons/fa"
-import {HiOutlinePlay} from "react-icons/hi"
+
 const Cards = (props) => {
   return (
     <>
