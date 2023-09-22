@@ -2,7 +2,7 @@ import React from "react";
 import imgabout from "./images/about.jpg"
 const About = () => {
   return (
-    <div id="about" className="  flex-col h-full w-[460px] sm:w-[600px] md:w-[1200px] px-4 py-6 bg-gradient-to-tr from-gray-800 rounded-lg mx-auto mt-5">
+    <div id="about" className="  flex-col h-full w-[460px] sm:w-[600px] md:w-[1200px] px-4 py-6 bg-gradient-to-tr from-gray-500 rounded-lg mx-auto mt-5">
       <h2 className="text-gray-700 font-bold text-3xl">About Me</h2>
       <p className="mt-3 text-gray-800 text-lg">
         I'm a self-taught Front End developer from India. I build websites with

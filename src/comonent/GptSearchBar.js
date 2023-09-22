@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import openai from "../utils/openai";
 import { API_OPTION } from "../utils/constant";
-import { addSearchedMovieList } from "../utils/gptSlice";
+import { addSearchedMovieList, toggleGptSpinner } from "../utils/gptSlice";
 import { useDispatch } from "react-redux";
 const GptSerachBar = () => {
   const serachText = useRef();
@@ -18,6 +18,7 @@ const GptSerachBar = () => {
   };
   const handleGptSearchClick = async (event) => {
     event.preventDefault();
+    dispatch(toggleGptSpinner())
     const query =
       "Act as a Movie recomendation system and suggest some movies for query: " +
       serachText.current.value +
@@ -33,6 +34,7 @@ const GptSerachBar = () => {
     const arrayPromises=movies.map((movie) =>getMoviesData(movie));
     const searchedResult = await Promise.all(arrayPromises)
     dispatch(addSearchedMovieList({movieList: searchedResult, movieName: movies}))
+    dispatch(toggleGptSpinner())
 
   };
   return (

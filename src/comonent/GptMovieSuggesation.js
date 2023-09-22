@@ -4,9 +4,10 @@ import { useSelector } from "react-redux";
 const GptMovieSuggesation = () => {
   const moviesName = useSelector((store) => store?.gpt?.movieName);
   const moviesList = useSelector((store) => store?.gpt?.movieList);
+  const gptSpinner = useSelector((store) => store?.gpt?.spinner);
   const renderContent = () => {
    
-   return moviesList ? (
+   return !gptSpinner ? (
       <div className="mt-[10px] text-white z-20 mx-8 bg-black   left-0 right-0 rounded-md">
         {moviesList.length == 10 ? (
           moviesName.map((movieName_, index) => {

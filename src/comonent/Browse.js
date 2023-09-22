@@ -9,16 +9,15 @@ import { useTrendingMovies } from "../hooks/useTrending";
 import { useSelector } from "react-redux";
 import GptSearch from "./GptSearch";
 import Profile from "./Profile"
-import { Navigate, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import { useState } from "react";
 
 const Browse = () => {
+  const [movie,setMovie] =useState(null)
   useNowPlayingMovies();
   usePopularMovies();
   useTopRatedMovies();
   useUpcoming();
   useTrendingMovies();
-  const nagivate = useNavigate()
   const showGptSearch = useSelector((store) => store?.gpt?.showGptSearch);
   const showProfilePage = useSelector((store) => store?.profile?.showProfilePage);
   const renderContent = ()=>{
@@ -32,10 +31,13 @@ const Browse = () => {
       return (
         <>
         <MainContainer/>
-        <SecondaryContainer/>
+        <SecondaryContainer getPopUpMovie={getPopUpMovie}/>
         </>
       )
     }
+  }
+  const getPopUpMovie =(movie)=>{
+   setMovie(movie)
   }
   return (
     <div>

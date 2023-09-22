@@ -6,7 +6,7 @@ import Portfolio from "./images/portfolio.jpg";
   return (
     <div
       id="work"
-      className="text-gray-700 flex-col w-[460px] justify-center sm:w-[600px] md:w-[1200px] px-4 py-6 bg-gradient-to-tr from-gray-800 rounded-lg mx-auto mt-5"
+      className="text-gray-700 flex-col w-[460px] justify-center sm:w-[600px] md:w-[1200px] px-4 py-6 bg-gradient-to-tr from-gray-500 rounded-lg mx-auto mt-5"
     >
       <h1 className="text-gray-700 font-bold text-3xl">Works</h1>
       <div className="flex-col  w-full h-full  mt-5">

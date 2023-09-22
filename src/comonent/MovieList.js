@@ -37,6 +37,7 @@ const MovieList = (props) => {
           {movies.map((movie) => {
             return (
               <Cards
+                getBackdropPath={props.getBackdropPath}
                 backdrop_path={movie.backdrop_path}
                 key={movie.backdrop_path}
                 id={movie.id}

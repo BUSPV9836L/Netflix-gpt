@@ -2,7 +2,7 @@ import React from "react";
 
  const Contact = () => {
   return (
-    <div id="contact" className="flex-col h-full w-[460px] sm:w-[600px] md:w-[1200px] px-4 py-6 bg-gradient-to-tr from-gray-800 rounded-lg mx-auto mt-5">
+    <div id="contact" className="flex-col h-full w-[460px] sm:w-[600px] md:w-[1200px] px-4 py-6 bg-gradient-to-tr from-gray-500 rounded-lg mx-auto mt-5">
       <h1 className="text-center text-gray-700 font-bold text-5xl mt-5">Get In Touch</h1>
       <p className="mt-5 text-gray-700 text-lg">
         I’m currently searching for opportunities for a front-end developer

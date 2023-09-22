@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
     setNav(!nav);
   };
   return (
-    <div className="flex justify-between px-4 py-5 items-center  h-full w-full ">
+    <div className="flex justify-between px-4 py-5 items-center  h-full w-full mt-20">
       <h1 className="text-6xl font-serif"></h1>
       <div className="hidden md:flex">
         <span className="mx-2 hover:bg-gradient-to-r from-black to-white rounded-3xl px-4 py-2">

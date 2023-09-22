@@ -10,7 +10,7 @@ import Contact from "../comonent/profile/pages/Contact"
 import Footer from "../comonent/profile/ui/Footer"
 const Profile = () => {
   return (
-    <div className=" absolute w-[460px] sm:w-full mt-20">
+    <div className=" absolute bg-gradient-to-b from-sky-950 w-[460px] sm:w-full ">
       <NavBar />
       <Home />
       <Links />
