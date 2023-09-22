@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import GptSearch from "./GptSearch";
 import Profile from "./Profile"
 import { useState } from "react";
+import PopUpMovie from "./PopUpMovie";
 
 const Browse = () => {
   const [movie,setMovie] =useState(null)
@@ -30,14 +31,19 @@ const Browse = () => {
     else{
       return (
         <>
-        <MainContainer/>
+        {movie?<PopUpMovie movie={movie} handelPopUp={handelPopUp}/>:""}
+        <MainContainer movie ={movie} handelPopUp={handelPopUp}/>
         <SecondaryContainer getPopUpMovie={getPopUpMovie}/>
+        
         </>
       )
     }
   }
   const getPopUpMovie =(movie)=>{
    setMovie(movie)
+  }
+  const handelPopUp =()=>{
+    setMovie(null)
   }
   return (
     <div>
