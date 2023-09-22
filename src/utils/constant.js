@@ -11,4 +11,4 @@ export const API_OPTION = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkZmUyZGRiYTMxMDc5MjJhOWI5NWM4YTdkZThlODAzOCIsInN1YiI6IjY1MDgxMzI4ZmEyN2Y0MDBlYjE4MzljMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.TgxQDTzo0FZT9Xdc16jX0IO5yQHSo4ivn451ITcoEbM'
   }
 };
-export const OPENAI_KEY = "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"
+export const OPENAI_KEY = "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"

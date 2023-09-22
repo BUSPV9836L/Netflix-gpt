@@ -45,7 +45,7 @@ const MovieList = (props) => {
           })}
         </div>
         <AiFillRightCircle
-          className="absolute right-0 mr-4 -mt-24 ml-4 cursor-pointer"
+          className="absolute right-0 mr-12 -mt-24 cursor-pointer"
           size={50}
           color="white"
           onClick={() => handleScroll("right")}

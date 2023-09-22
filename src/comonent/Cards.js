@@ -1,5 +1,6 @@
 
 const Cards = (props) => {
+  if(!props.backdrop_path)return;
   return (
     <>
       <img

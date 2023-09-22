@@ -3,6 +3,8 @@ import Body from "./comonent/Body";
 import appStore from "./utils/appStore";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Browse from "./comonent/Browse";
+import Profile from "./comonent/Profile";
+import GptSearch from "./comonent/GptSearch";
 
 function App() {
   const approute = createBrowserRouter([

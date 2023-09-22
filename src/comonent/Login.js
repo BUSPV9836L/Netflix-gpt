@@ -10,6 +10,7 @@ import { auth } from "../utils/firebase";
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
 import { LOGIN_BACKGROUND, USER_AVTAR } from "../utils/constant";
+// import { useNavigate } from "react-router-dom";
 const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
@@ -17,6 +18,7 @@ const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const dispatch =useDispatch()
+  // const nagivate = useNavigate()
   const signUpHandler = (event) => {
     event.preventDefault();
     setIsSignIn((prev) => !prev);
@@ -74,7 +76,6 @@ const Login = () => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "-" + errorMessage);
-          
           // ..
         });
     } else {
@@ -86,13 +87,13 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-
           // ...
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + "-" + errorMessage);
+          
         });
     }
   };
