@@ -28,7 +28,7 @@ const MovieList = (props) => {
       <div>
         <h1 className="text-white text-xl p-2 ">{props.title}</h1>
         <AiFillLeftCircle
-          className="absolute mt-10 ml-4 cursor-pointer"
+          className="absolute hidden sm:block mt-10 ml-4 cursor-pointer"
           size={50}
           color="white"
           onClick={() => handleScroll("left")}
@@ -46,7 +46,7 @@ const MovieList = (props) => {
           })}
         </div>
         <AiFillRightCircle
-          className="absolute right-0 mr-12 -mt-24 cursor-pointer"
+          className="absolute hidden sm:block right-0 mr-12 -mt-24 cursor-pointer"
           size={50}
           color="white"
           onClick={() => handleScroll("right")}

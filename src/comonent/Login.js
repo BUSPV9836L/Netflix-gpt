@@ -98,23 +98,23 @@ const Login = () => {
     }
   };
   return (
-    <div className="bg-black">
+    <div className=" bg-gradient-to-br from-black to-red-700 h-screen w-screen">
       <Header/>
-      <div>
+      <div className="sm:flex hidden">
         <img
           className="opacity-100"
           src={LOGIN_BACKGROUND}
           alt="background"
         />
       </div>
-      <form className=" absolute mt-[-600px] text-white h-fit w-[400px] rounded-md bg-black bg-opacity-80 mx-auto right-0 left-0 flex flex-col  px-12 py-20">
-        <h1 className="text-3xl font-bold mb-5">
+      <form className=" absolute px-10 py-10 w-[300px] mt-[150px] sm:mt-[-600px] text-white h-fit sm:w-[400px] rounded-md bg-black bg-opacity-80 mx-auto right-0 left-0 flex flex-col  sm:px-12 sm:py-20">
+        <h1 className="sm:text-3xl text-2xl font-bold mb-5">
           {isSignIn ? "Sign In" : "Sign Up"}
         </h1>
         {!isSignIn ? (
           <input
             ref={name}
-            className="h-12  my-4  rounded-sm px-4 bg-gray-700"
+            className="sm:h-12 h-8  my-2  rounded-sm px-4 bg-gray-700"
             type="text"
             placeholder="Full Name"
           />
@@ -123,18 +123,18 @@ const Login = () => {
         )}
         <input
           ref={email}
-          className="h-12  my-4  rounded-sm px-4 bg-gray-700"
+          className="sm:h-12 h-8  my-2  rounded-sm px-4 bg-gray-700"
           type="email"
           placeholder="Email Address"
         />
         <input
           ref={password}
-          className="h-12   my-2 rounded-sm px-4 bg-gray-700"
+          className="sm:h-12 h-8  my-2  rounded-sm px-4 bg-gray-700"
           type="password"
           placeholder="Password"
         />
         <button
-          className="h-12  mt-8 rounded-md px-4 bg-red-600"
+          className="sm:h-12 h-10 mt-6  sm:mt-8 rounded-md px-4 bg-red-600"
           onClick={handelClick}
         >
           {isSignIn ? "Sign In" : "Sign Up"}

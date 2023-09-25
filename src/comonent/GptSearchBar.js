@@ -38,16 +38,16 @@ const GptSerachBar = () => {
 
   };
   return (
-    <div className="flex w-full justify-center mt-[200px]">
-      <form className="">
+    <div className="flex w-full justify-center sm:mt-[200px] mt-[100px]">
+      <form className="sm:flex-row flex flex-col justify-center ">
         <input
           ref={serachText}
           type="text"
-          className="w-[400px] px-4 py-2 bg-slate-900 rounded-md text-white "
+          className="sm:w-[400px] w-[300px]  px-4 py-2 bg-slate-900 rounded-md text-white "
           placeholder="What would you like to watch today?"
         ></input>
         <button
-          className="text-white text-lg px-4 py-2 ml-2 rounded-md mr-4 bg-gradient-to-b from-black hover:bg-black"
+          className="text-white text-lg px-4 py-1 sm:py-2 mt-2 sm:mt-0 ml-2 rounded-md mr-4 bg-slate-900 hover:bg-slate-600"
           onClick={handleGptSearchClick}
         >
           Search

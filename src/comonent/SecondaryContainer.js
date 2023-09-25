@@ -27,7 +27,7 @@ const SecondaryContainer = (props) => {
     return;
   return (
     <>
-      <div className="bg-black px-8" >
+      <div className="bg-black px-4 sm:px-8 mt-[210px] sm:mt-0" >
         <div className="-mt-52 relative">
           <MovieList
             movies={nowPlayingMovies}

@@ -10,7 +10,7 @@ const MainContainer = (props) => {
   const { overview, title,id } = props.movie?props.movie:nowPlayingMovie;
 
   return (
-    <div className=" w-screen" onClick={props.handelPopUp}>
+    <div className=" w-screen h-full" onClick={props.handelPopUp}>
       <VideoTitle overview={overview} title={title} />
       <VideoBackground id={id}/>
     </div>

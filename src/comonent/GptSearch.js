@@ -2,11 +2,13 @@ import React from "react";
 import GptSerachBar from "./GptSearchBar";
 import GptMovieSuggesation from "./GptMovieSuggesation";
 import Header from "./Header";
-const GptSearch = () => {
+import PopUpMovie from "./PopUpMovie";
+const GptSearch = (props) => {
   return (
-    <div className=" h-[100%] bg-gradient-to-b from-sky-950 absolute w-full">
+    <div className=" h-[100%] bg-black absolute w-full">
+      {props.movie?<PopUpMovie movie={props.movie} handelPopUp={props.handelPopUp}/>:""}
       <GptSerachBar/>
-      <GptMovieSuggesation />
+      <GptMovieSuggesation getPopUpMovie={props.getPopUpMovie}/>
     </div>
   );
 };

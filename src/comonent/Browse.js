@@ -8,7 +8,6 @@ import { useUpcoming } from "../hooks/useUpcoming";
 import { useTrendingMovies } from "../hooks/useTrending";
 import { useSelector } from "react-redux";
 import GptSearch from "./GptSearch";
-import Profile from "./Profile"
 import { useState } from "react";
 import PopUpMovie from "./PopUpMovie";
 
@@ -23,10 +22,7 @@ const Browse = () => {
   const showProfilePage = useSelector((store) => store?.profile?.showProfilePage);
   const renderContent = ()=>{
     if(showGptSearch){
-      return <GptSearch/>
-    }
-    else if(showProfilePage){
-      return <Profile/>
+      return <GptSearch movie={movie} handelPopUp={handelPopUp} getPopUpMovie={getPopUpMovie}/>
     }
     else{
       return (
